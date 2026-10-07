@@ -4,6 +4,8 @@ FoodLoop logo: the user's supplied logo screenshot, saved unchanged as `public/i
 
 Stock photographs illustrate fictional demo listings and roles; they do not represent participating businesses or users. All photos used under the Pexels License: https://www.pexels.com/license/.
 
+- teacher: nappy — https://www.pexels.com/photo/photo-of-woman-teaching-935943/. This is an illustrative stock teacher photograph, not a photograph of the actual Ms. Watson.
+
 - croissants: Lara Farber — https://www.pexels.com/photo/croissants-on-baking-tray-13870808/
 - chicken-rice: Change C.C — https://www.pexels.com/photo/chicken-with-rice-on-a-plate-21517313/
 - mixed-fruit: Any Lane — https://www.pexels.com/photo/fresh-healthy-fruits-placed-in-bowl-5945874/

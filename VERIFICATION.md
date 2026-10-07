@@ -29,3 +29,7 @@ All content and actions remain fictional simulations. No personal-information in
 - Ms. Watson opens Student discovery and can switch directly into Business Home, Share Food and back to Student. Both interfaces use the same existing local demo state.
 - Review controls are available on desktop and mobile (390 × 844, no horizontal overflow). Switching role and entering ordinary Student mode removes the review controls.
 - No browser warnings or errors were captured during follow-up checks. TypeScript checking and the updated production build passed.
+
+## Teacher card photograph and copy
+
+The Ms. Watson card now uses a licensed stock photograph of a teacher in a classroom and describes exploring both interfaces, testing the prototype features and grading the work. Browser verification confirmed the photograph loads at 2048 × 1365 and the requested wording is visible. The updated static build passed and the offline file embeds the teacher photograph.
