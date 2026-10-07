@@ -2,9 +2,9 @@
 
 FoodLoop logo: an edited version of the user's supplied logo screenshot, saved as `public/images/foodloop-logo.png`. It uses a white background and dark “Food” lettering while preserving the two green leaves and green “Loop” styling.
 
-Ms. Watson card: `public/images/teacher-cs.png` depicts a fictional white teacher with short blonde hair in a computer science classroom. It does not depict the actual Ms. Watson.
+Ms. Watson option: uses Lucide clipboard, student and store icons instead of a photograph.
 
-Both assets were created with the built-in image generation tool (not the CLI fallback), one request per image. Exact prompts are recorded below.
+The logo was edited with the built-in image generation tool (not the CLI fallback), in one request. Its exact prompt is recorded below.
 
 Stock photographs illustrate fictional demo listings and roles; they do not represent participating businesses or users. All photos used under the Pexels License: https://www.pexels.com/license/.
 
@@ -37,17 +37,4 @@ Text (verbatim): "FoodLoop".
 Invariants: exactly preserve the existing typography, letter shapes, wordmark placement, and the two green leaves above the center. Keep the lime-green "Loop" color. Preserve the leaf shapes and colors.
 Composition: tight horizontal logo composition with minimal empty margins, approximately 2.15:1 landscape aspect ratio.
 Constraints: opaque pure white background; no frame, shadow, gradient, new decorative elements, additional text, or watermark.
-```
-
-### Teacher (new generation)
-
-```text
-Use case: photorealistic-natural.
-Asset type: teacher profile card cover for a school prototype, suited to a 350px by 230px cover crop.
-Primary request: a photorealistic fictional white female teacher in her 40s, short blonde hair in a short bob or pixie style, friendly professional appearance, in a modern computer science classroom.
-Scene: rows of desktop monitors and programming code or computing diagrams visible on a classroom screen or board.
-Subject: one generic fictional teacher, centered; face and upper body well framed, medium portrait framing, not an extreme close-up.
-Style: realistic educational stock photography with natural skin texture, natural daylight, welcoming professional mood.
-Composition: landscape 3:2 photo; keep her face and upper body clearly readable after a 350px by 230px card cover crop.
-Constraints: generic fictional person with no real likeness; no names or text identifying an actual school; no watermark.
 ```

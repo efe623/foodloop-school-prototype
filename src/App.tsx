@@ -126,16 +126,6 @@ function RoleSelector({ onChoose }: { onChoose: (r: EntryRole) => void }) {
               action: "Continue as Business",
               alt: "Stock photograph of a welcoming bakery interior",
             },
-            {
-              id: "teacher" as EntryRole,
-              title: "Ms. Watson",
-              image: "/images/teacher-cs.png",
-              icon: PanelsTopLeft,
-              description:
-                "Explore both the Student and Business interfaces, test the prototype’s features, and grade the work.",
-              action: "Continue as Ms. Watson",
-              alt: "Fictional teacher with short blonde hair in a computer science classroom",
-            },
           ].map((r) => (
             <article className="role-card" key={r.id}>
               <div className="role-photo">
@@ -154,6 +144,24 @@ function RoleSelector({ onChoose }: { onChoose: (r: EntryRole) => void }) {
             </article>
           ))}
         </div>
+        <article className="teacher-role" aria-labelledby="teacher-role-title">
+          <div className="teacher-role-icon" aria-hidden="true">
+            <ClipboardCheck />
+          </div>
+          <div className="teacher-role-copy">
+            <h2 id="teacher-role-title">Ms. Watson</h2>
+            <p>
+              Explore both interfaces, test the prototype, and grade the work.
+            </p>
+            <div className="teacher-role-badges">
+              <span><GraduationCap aria-hidden="true" /> Student UI</span>
+              <span><Store aria-hidden="true" /> Business UI</span>
+            </div>
+          </div>
+          <button className="primary" onClick={() => onChoose("teacher")}>
+            Continue as Ms. Watson
+          </button>
+        </article>
       </main>
     </div>
   );
