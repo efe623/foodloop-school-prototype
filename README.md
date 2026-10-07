@@ -1,6 +1,8 @@
 # FoodLoop school CS project.
 
 FoodLoop is an app built for the Computer Science project that we took Olio as an example; I have built this app with Base44, did the designs by myself in Figma, and the reason all these files are on GitHub is because the preview link in Base44 was not working for me, so I pushed the app from Base44 to GitHub and got a .vercel.app domain from vercel.com . This app has palce holder foods that are there because no one uses the app and no one uploaded any foods, and I don't want the home screen to be empty.
+
+If you want, this is the link for the website : https://foodloop-school-project.vercel.app/
 ## Source structure
 
 - `src/data/mockListings.ts`: all predefined foods, categories, allergens, mock distances, demo collection points and photo choices.
