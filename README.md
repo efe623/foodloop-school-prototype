@@ -17,3 +17,7 @@ FoodLoop is an app built for the Computer Science project that we took Olio as a
 - `ASSETS.md`: stock photography and OpenStreetMap credits.
 
 The optional browser WebMCP tools expose reading demo food, choosing a role, opening details and staging a claim confirmation using the same visible UI. They are feature-detected and do not require a service or account.
+
+## Vercel deployment
+
+FoodLoop uses Vite. The repository's `vercel.json` sets the framework to Vite, installs with `npm ci`, builds with `npm run build`, and serves `dist`. Use the repository root as the Root Directory. Deploy the latest `main` commit so this configuration is included.
