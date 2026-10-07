@@ -51,10 +51,13 @@ export const allergenIcons: Record<string, LucideIcon> = {
   Soy: Sprout,
   Sesame: Sprout,
 };
-export function Brand() {
+export function Brand({ onDark = false }: { onDark?: boolean }) {
   return (
-    <div className="brand">
-      <img src={assetUrl("/images/foodloop-logo.png")} alt="FoodLoop" />
+    <div className="brand" data-surface={onDark ? "dark" : "light"}>
+      <img
+        src={assetUrl(onDark ? "/images/foodloop-logo-dark.png" : "/images/foodloop-logo.png")}
+        alt="FoodLoop"
+      />
     </div>
   );
 }

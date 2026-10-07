@@ -641,7 +641,7 @@ function FoodLoop() {
                 onClick={() => navigate({ screen: "home" })}
                 aria-label="FoodLoop Home"
               >
-                <Brand />
+                <Brand onDark />
               </button>
             </SidebarHeader>
             <SidebarContent>
@@ -716,7 +716,7 @@ function FoodLoop() {
               </span>
             </div>
             <div className="mobile-brand">
-              <Brand />
+              <Brand onDark />
               <span className="demo-badge">Demo</span>
             </div>
             {teacherMode ? (

@@ -137,6 +137,10 @@ button:hover {
   border-radius: 4px;
   object-fit: contain;
 }
+.brand[data-surface="dark"] > img {
+  background: transparent;
+  border-radius: 0;
+}
 .brand > svg {
   color: #a9d464;
   width: 32px;
