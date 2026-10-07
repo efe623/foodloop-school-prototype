@@ -54,10 +54,7 @@ export const allergenIcons: Record<string, LucideIcon> = {
 export function Brand() {
   return (
     <div className="brand">
-      <Sprout />
-      <span>
-        Food<span className="lime">Loop</span>
-      </span>
+      <img src={assetUrl("/images/foodloop-logo.png")} alt="FoodLoop" />
     </div>
   );
 }

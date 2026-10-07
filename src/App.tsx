@@ -9,6 +9,7 @@ import {
   Store,
   Sprout,
   GraduationCap,
+  PanelsTopLeft,
   RefreshCcw,
   Check,
   Phone,
@@ -44,7 +45,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { DemoProvider, useDemo, filterListings, type Claim } from "./state";
 import { type Role, type Listing, formatTime } from "./data/mockListings";
-import { Brand, MiniCard, Note } from "./ui";
+import { Brand, ChoicePills, MiniCard, Note } from "./ui";
 import Home from "./Home";
 import { Details, CollectionLocation } from "./Details";
 import Claims from "./Claims";
@@ -87,7 +88,8 @@ const profileScreens: Screen[] = [
   "impact",
   "help",
 ];
-function RoleSelector({ onChoose }: { onChoose: (r: Role) => void }) {
+type EntryRole = Role | "teacher";
+function RoleSelector({ onChoose }: { onChoose: (r: EntryRole) => void }) {
   return (
     <div className="role-page">
       <header className="role-header">
@@ -105,34 +107,39 @@ function RoleSelector({ onChoose }: { onChoose: (r: Role) => void }) {
         <div className="role-cards">
           {[
             {
-              id: "student" as Role,
+              id: "student" as EntryRole,
               title: "Student",
               image: "/images/student.jpg",
               icon: GraduationCap,
               description:
                 "Find surplus food available nearby, view food details, claim available food, and keep track of your collections.",
               action: "Continue as Student",
+              alt: "Stock photograph of a student with a backpack and books",
             },
             {
-              id: "business" as Role,
+              id: "business" as EntryRole,
               title: "Business / Donor",
               image: "/images/bakery.jpg",
               icon: Store,
               description:
                 "Share surplus food that would otherwise go to waste, create food listings, and manage food collections.",
               action: "Continue as Business",
+              alt: "Stock photograph of a welcoming bakery interior",
+            },
+            {
+              id: "teacher" as EntryRole,
+              title: "Ms. Watson",
+              image: "/images/sandwiches.jpg",
+              icon: PanelsTopLeft,
+              description:
+                "Explore both the Student and Business interfaces. Switch between finding food and sharing food while reviewing the prototype.",
+              action: "Continue as Ms. Watson",
+              alt: "Stock photograph of sandwiches for the FoodLoop prototype",
             },
           ].map((r) => (
             <article className="role-card" key={r.id}>
               <div className="role-photo">
-                <img
-                  src={assetUrl(r.image)}
-                  alt={
-                    r.id === "student"
-                      ? "Stock photograph of a student with a backpack and books"
-                      : "Stock photograph of a welcoming bakery interior"
-                  }
-                />
+                <img src={assetUrl(r.image)} alt={r.alt} />
                 <span className="role-icon">
                   <r.icon />
                 </span>
@@ -147,16 +154,7 @@ function RoleSelector({ onChoose }: { onChoose: (r: Role) => void }) {
             </article>
           ))}
         </div>
-        <p className="role-foot">
-          <Sprout size={18} />
-          All listings and interactions are fictional demo content. No account
-          needed.
-        </p>
       </main>
-      <footer className="role-footer">
-        <span>FoodLoop · Good food should be used.</span>
-        <span>Computer Science school project</span>
-      </footer>
     </div>
   );
 }
@@ -241,6 +239,7 @@ interface ModelContext {
 function FoodLoop() {
   const { state, dispatch, storageAvailable } = useDemo();
   const [role, setRole] = useState<Role | null>(null);
+  const [teacherMode, setTeacherMode] = useState(false);
   const [route, setRoute] = useState<Route>({ screen: "home" });
   const [history, setHistory] = useState<Route[]>([]);
   const [modal, setModal] = useState<Modal>(null);
@@ -263,7 +262,11 @@ function FoodLoop() {
     setModal(null);
     window.scrollTo({ top: 0 });
   }
-  function choose(r: Role) {
+  function choose(r: EntryRole) {
+    setTeacherMode(r === "teacher");
+    viewAs(r === "teacher" ? "student" : r);
+  }
+  function viewAs(r: Role) {
     window.scrollTo({ top: 0 });
     setRole(r);
     setRoute({ screen: "home" });
@@ -274,6 +277,7 @@ function FoodLoop() {
   function switchRole() {
     window.scrollTo({ top: 0 });
     setRole(null);
+    setTeacherMode(false);
     setRoute({ screen: "home" });
     setHistory([]);
     setEditing(undefined);
@@ -406,18 +410,18 @@ function FoodLoop() {
       name: "choose_demo_role",
       title: "Choose demo role",
       description:
-        "Enter the Student or Business school-prototype interface without an account.",
+        "Enter the Student, Business or Ms. Watson review interface without an account.",
       inputSchema: {
         type: "object",
-        properties: { role: { enum: ["student", "business"] } },
+        properties: { role: { enum: ["student", "business", "teacher"] } },
         required: ["role"],
         additionalProperties: false,
       },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute(input) {
         const r = (input as { role?: unknown })?.role;
-        if (r !== "student" && r !== "business")
-          throw new Error("role must be student or business");
+        if (r !== "student" && r !== "business" && r !== "teacher")
+          throw new Error("role must be student, business or teacher");
         flushSync(() => bridge.current.choose(r));
         return { role: r, screen: "home" };
       },
@@ -671,10 +675,18 @@ function FoodLoop() {
                 </span>
                 <div>
                   <strong>
-                    {role === "student" ? "Student Demo" : "Local Bakery Demo"}
+                    {teacherMode
+                      ? "Ms. Watson"
+                      : role === "student"
+                        ? "Student Demo"
+                        : "Local Bakery Demo"}
                   </strong>
                   <small>
-                    {role === "student" ? "Student" : "Business / Donor"}
+                    {teacherMode
+                      ? "Reviewing both interfaces"
+                      : role === "student"
+                        ? "Student"
+                        : "Business / Donor"}
                   </small>
                 </div>
               </button>
@@ -699,6 +711,28 @@ function FoodLoop() {
               <Brand />
               <span className="demo-badge">Demo</span>
             </div>
+            {teacherMode ? (
+              <section
+                className="teacher-toolbar"
+                aria-label="Ms. Watson review mode"
+              >
+                <div>
+                  <strong>Ms. Watson</strong>
+                  <span>Explore both interfaces</span>
+                </div>
+                <ChoicePills
+                  label="Interface to review"
+                  value={role}
+                  onChange={(next) => {
+                    if (next === "student" || next === "business") viewAs(next);
+                  }}
+                  options={[
+                    { value: "student", label: "Student" },
+                    { value: "business", label: "Business / Donor" },
+                  ]}
+                />
+              </section>
+            ) : null}
             <div ref={screenRef} className="screen-content">
               {content}
             </div>

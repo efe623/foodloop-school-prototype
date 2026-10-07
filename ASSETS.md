@@ -1,5 +1,7 @@
 # Photography credits
 
+FoodLoop logo: the user's supplied logo screenshot, saved unchanged as `public/images/foodloop-logo.png`. CSS clips screenshot frame margins without redrawing the mark.
+
 Stock photographs illustrate fictional demo listings and roles; they do not represent participating businesses or users. All photos used under the Pexels License: https://www.pexels.com/license/.
 
 - croissants: Lara Farber — https://www.pexels.com/photo/croissants-on-baking-tray-13870808/

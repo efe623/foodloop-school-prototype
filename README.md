@@ -4,9 +4,11 @@ FoodLoop is an interactive school prototype built from the supplied CS DESIGN.do
 
 ## Open for presentation
 
-Double-click the accompanying **FoodLoop.html** file and open it in a modern browser. The complete app, photographs and fixed map are embedded. No installation, server, internet connection or account is required. Each fresh launch starts with Student or Business / Donor selection.
+Double-click the accompanying **FoodLoop.html** file and open it in a modern browser. The complete app, photographs and fixed map are embedded. No installation, server, internet connection or account is required. Each fresh launch starts with Student, Business / Donor or Ms. Watson selection.
 
 Use **Switch role** in Profile or the desktop sidebar to inspect both modes. Use **Profile → Settings → Reset Demo** before a presentation to restore the original data. Browser storage normally preserves claims, collections, preferences and listings. If a browser blocks storage for local files, the app still works in memory for that session.
+
+**Ms. Watson** enters review mode. Its top control switches directly between the complete Student and Business interfaces while preserving the same local demo data. It is a presentation option, not an account. The supplied FoodLoop logo image is reused throughout the app. The small disclaimer and footer text were removed from the role-selection screen as requested.
 
 ## Teacher walkthrough
 

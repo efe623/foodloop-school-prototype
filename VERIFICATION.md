@@ -21,3 +21,11 @@ The production build was tested through a local HTTP preview. Direct file-protoc
 Optional WebMCP validation was unavailable: the connected browser exposes viewport and page-assets capabilities, without a permitted WebMCP tool invocation surface. The feature-detected tools are optional and do not affect the visible prototype flows.
 
 All content and actions remain fictional simulations. No personal-information inputs, authentication, location permissions, external messaging, payment processing or production database are present.
+
+## Requested follow-up changes
+
+- The supplied FoodLoop logo screenshot is reused in every shared brand placement; only screenshot frame margins are clipped by CSS. The underlying image is unchanged.
+- Role selection now contains Student, Business / Donor and Ms. Watson. Its small disclaimer and footer text are removed.
+- Ms. Watson opens Student discovery and can switch directly into Business Home, Share Food and back to Student. Both interfaces use the same existing local demo state.
+- Review controls are available on desktop and mobile (390 × 844, no horizontal overflow). Switching role and entering ordinary Student mode removes the review controls.
+- No browser warnings or errors were captured during follow-up checks. TypeScript checking and the updated production build passed.

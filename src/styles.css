@@ -129,6 +129,15 @@ button:hover {
   font-weight: 700;
   letter-spacing: -1.2px;
 }
+.brand > img {
+  display: block;
+  width: 120px;
+  height: auto;
+  /* Hide the supplied screenshot's frame margins; keep the logo itself intact. */
+  clip-path: inset(7px 0 7px round 4px);
+  margin-block: -7px;
+  object-fit: contain;
+}
 .brand > svg {
   color: #a9d464;
   width: 32px;
@@ -180,7 +189,7 @@ button:hover {
   letter-spacing: 0.03em;
 }
 .role-main {
-  width: min(960px, 88%);
+  width: min(1180px, 88%);
   margin: 35px auto 28px;
   flex: 1;
 }
@@ -204,7 +213,7 @@ button:hover {
 }
 .role-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
 }
 .role-card {
@@ -244,6 +253,13 @@ button:hover {
 }
 .role-body {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.role-card {
+  display: flex;
+  flex-direction: column;
 }
 .role-body h2 {
   font-size: 27px;
@@ -257,6 +273,79 @@ button:hover {
 }
 .role-body .primary {
   width: 100%;
+  margin-top: auto;
+}
+.teacher-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 17px 30px;
+  background: #edf3e3;
+  border-bottom: 1px solid #dce7cc;
+}
+.teacher-toolbar > div:first-child {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.teacher-toolbar strong {
+  font-size: 17px;
+}
+.teacher-toolbar span {
+  color: #69785e;
+  font-size: 13px;
+}
+.teacher-toolbar .choice-pills {
+  flex-wrap: nowrap;
+}
+.dark .teacher-toolbar {
+  background: #253721;
+  border-color: #3c4f33;
+}
+.dark .teacher-toolbar span {
+  color: #bbc7b1;
+}
+@media (min-width: 641px) and (max-width: 950px) {
+  .role-main {
+    width: 92%;
+  }
+  .role-cards {
+    gap: 15px;
+  }
+  .role-body {
+    padding: 19px;
+  }
+  .role-body h2 {
+    font-size: 24px;
+  }
+  .role-body > p {
+    font-size: 14px;
+  }
+  .role-body .primary {
+    padding-inline: 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 767px) {
+  .teacher-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px 21px;
+  }
+  .teacher-toolbar > div:first-child {
+    justify-content: space-between;
+  }
+  .teacher-toolbar .choice-pills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .teacher-toolbar .choice {
+    justify-content: center;
+    padding: 10px;
+    font-size: 13px;
+  }
 }
 .role-foot {
   display: flex;
