@@ -129,12 +129,12 @@ function RoleSelector({ onChoose }: { onChoose: (r: EntryRole) => void }) {
             {
               id: "teacher" as EntryRole,
               title: "Ms. Watson",
-              image: "/images/teacher.jpg",
+              image: "/images/teacher-cs.png",
               icon: PanelsTopLeft,
               description:
                 "Explore both the Student and Business interfaces, test the prototype’s features, and grade the work.",
               action: "Continue as Ms. Watson",
-              alt: "Stock photograph of a teacher in a classroom",
+              alt: "Fictional teacher with short blonde hair in a computer science classroom",
             },
           ].map((r) => (
             <article className="role-card" key={r.id}>

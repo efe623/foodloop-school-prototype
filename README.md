@@ -8,7 +8,7 @@ Double-click the accompanying **FoodLoop.html** file and open it in a modern bro
 
 Use **Switch role** in Profile or the desktop sidebar to inspect both modes. Use **Profile → Settings → Reset Demo** before a presentation to restore the original data. Browser storage normally preserves claims, collections, preferences and listings. If a browser blocks storage for local files, the app still works in memory for that session.
 
-**Ms. Watson** enters review mode. Its top control switches directly between the complete Student and Business interfaces while preserving the same local demo data. It is a presentation option, not an account. The supplied FoodLoop logo image is reused throughout the app. The small disclaimer and footer text were removed from the role-selection screen as requested.
+**Ms. Watson** enters review mode. Its top control switches directly between the complete Student and Business interfaces while preserving the same local demo data. It is a presentation option, not an account. Its illustrative teacher image depicts a fictional teacher with short blonde hair in a computer science classroom. The supplied FoodLoop logo is adapted to a white background, with dark “Food” lettering for readability and the original green leaves and “Loop” styling. The small disclaimer and footer text were removed from the role-selection screen as requested.
 
 ## Teacher walkthrough
 

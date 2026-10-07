@@ -133,9 +133,8 @@ button:hover {
   display: block;
   width: 120px;
   height: auto;
-  /* Hide the supplied screenshot's frame margins; keep the logo itself intact. */
-  clip-path: inset(7px 0 7px round 4px);
-  margin-block: -7px;
+  background: #fff;
+  border-radius: 4px;
   object-fit: contain;
 }
 .brand > svg {
@@ -168,6 +167,7 @@ button:hover {
 }
 .role-header {
   padding: 28px 6%;
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
